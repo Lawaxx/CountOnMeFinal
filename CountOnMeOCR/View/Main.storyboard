@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xk0-bk-QJU">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CountOnMeViewController-->
+        <scene sceneID="t9K-t0-bhF">
+            <objects>
+                <viewController title="CountOnMeViewController" id="Xk0-bk-QJU" customClass="ViewController" customModule="CountOnMeOCR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="20A-7p-C4f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARe-oy-1da">
+                                <rect key="frame" x="30" y="74" width="354" height="150"/>
+                                <color key="backgroundColor" red="0.23285508160000001" green="0.53306645149999998" blue="0.59230643510000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="zaD-JC-ugD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HKW-3P-kxg">
+                                <rect key="frame" x="30" y="274" width="354" height="568"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="60G-lC-DcL">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="105.66666666666667"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhR-0g-blt">
+                                                <rect key="frame" x="0.0" y="0.0" width="263" height="105.66666666666667"/>
+                                                <color key="backgroundColor" red="0.29408776759999999" green="0.29805845019999999" blue="0.32152599100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="resetButton:" destination="Xk0-bk-QJU" eventType="touchUpInside" id="Ibj-EO-DPf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daG-Bd-sbp">
+                                                <rect key="frame" x="273" y="0.0" width="81" height="105.66666666666667"/>
+                                                <color key="backgroundColor" red="0.1469387114" green="0.40562295910000001" blue="0.5872226357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="35"/>
+                                                <state key="normal" title="/">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tappedOperandButton:" destination="Xk0-bk-QJU" eventType="touchUpInside" id="wY6-0e-2wJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QiO-Ds-NVe">
+                                        <rect key="frame" x="0.0" y="115.66666666666669" width="354" height="105.66666666666669"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bw-Ub-Hep">
+                                                <rect key="frame" x="0.0" y="0.0" width="81" height="105.66666666666667"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tappedNumberButton:" destination="Xk0-bk-QJU" eventType="touchUpInside" id="mQX-SC-zqS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWr-XV-LAR">
+                                                <rect key="frame" x="91" y="0.0" width="81" height="105.66666666666667"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tappedNumberButton:" destination="Xk0-bk-QJU" eventType="touchUpInside" id="7NK-rK-E70"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PW-16-dy0">
+                                                <rect key="frame" x="182" y="0.0" width="81" height="105.66666666666667"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <state key="normal" title="9">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tappedNumberButton:" destination="Xk0-bk-QJU" eventType="touchUpInside" id="1ih-cM-AQQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFJ-Wn-MEf">
+                                                <rect key="frame" x="273" y="0.0" width="81" height="105.66666666666667"/>
+                                                <color key="backgroundColor" red="0.84224382663874409" green="0.87714149746192893" blue="0.64528968394239727" alpha="0.92944670376712324" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="60"/>
+                                                <state key="normal" title="*">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tappedOperandButton:" destination="Xk0-bk-QJU" eventType="touchUpInside" id="KLS-0G-Kmq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="av6-ta-IPJ">
+                                        <rect key="frame" x="0.0" y="231.33333333333334" width="354" height="105.33333333333334"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XK4-QU-Y0K">
+                                                <rect key="frame" x="0.0" y="0.0" width="81" height="105.33333333333333"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tappedNumberButton:" destination="Xk0-bk-QJU" eventType="touchUpInside" id="X7Y-Jo-Kqc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSm-X3-4We">
+                                                <rect key="frame" x="91" y="0.0" width="81" height="105.33333333333333"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tappedNumberButton:" destination="Xk0-bk-QJU" eventType="touchUpInside" id="XEJ-gp-0w4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRz-Vo-zN0">
+                                                <rect key="frame" x="182" y="0.0" width="81" height="105.33333333333333"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tappedNumberButton:" destination="Xk0-bk-QJU" eventType="touchUpInside" id="4o3-El-Xzj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmQ-yD-ySq">
+                                                <rect key="frame" x="273" y="0.0" width="81" height="105.33333333333333"/>
+                                                <color key="backgroundColor" red="0.80791957487309651" green="0.087183184724994145" blue="0.025894998620596597" alpha="0.92944670376712324" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                                                <state key="normal" title="-">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tappedOperandButton:" destination="Xk0-bk-QJU" eventType="touchUpInside" id="DnZ-IH-jsh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qfL-vF-h8A">
+                                        <rect key="frame" x="0.0" y="346.66666666666663" width="354" height="105.66666666666669"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rmf-JF-BZe">
+                                                <rect key="frame" x="0.0" y="0.0" width="81" height="105.66666666666667"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tappedNumberButton:" destination="Xk0-bk-QJU" eventType="touchUpInside" id="b5i-v3-mVV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkK-SL-Bou">
+                                                <rect key="frame" x="91" y="0.0" width="81" height="105.66666666666667"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tappedNumberButton:" destination="Xk0-bk-QJU" eventType="touchUpInside" id="zgE-1Q-OWr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhU-Kw-dUV">
+                                                <rect key="frame" x="182" y="0.0" width="81" height="105.66666666666667"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tappedNumberButton:" destination="Xk0-bk-QJU" eventType="touchUpInside" id="RUO-6W-3WP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQT-ps-uoJ">
+                                                <rect key="frame" x="273" y="0.0" width="81" height="105.66666666666667"/>
+                                                <color key="backgroundColor" red="0.39432653144630236" green="0.87117306472081224" blue="0.27020830208700064" alpha="0.92944670376712324" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                                <state key="normal" title="+">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tappedOperandButton:" destination="Xk0-bk-QJU" eventType="touchUpInside" id="quU-NM-Kib"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="y4B-6B-hM4">
+                                        <rect key="frame" x="0.0" y="462.33333333333343" width="354" height="105.66666666666669"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcO-BX-5V4">
+                                                <rect key="frame" x="0.0" y="0.0" width="172" height="105.66666666666667"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <state key="normal" title="0">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tappedNumberButton:" destination="Xk0-bk-QJU" eventType="touchUpInside" id="6hB-Xj-Fdy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s59-cG-8Hy">
+                                                <rect key="frame" x="182" y="0.0" width="172" height="105.66666666666667"/>
+                                                <color key="backgroundColor" red="0.80791957487309651" green="0.51712921661163891" blue="0.13038009495995834" alpha="0.92944670376712324" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                                <state key="normal" title="=">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tappedEqualButton:" destination="Xk0-bk-QJU" eventType="touchUpInside" id="bPt-FF-jmi"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="s59-cG-8Hy" firstAttribute="trailing" secondItem="VQT-ps-uoJ" secondAttribute="trailing" id="Bvm-og-6J8"/>
+                                    <constraint firstItem="RhR-0g-blt" firstAttribute="leading" secondItem="YcO-BX-5V4" secondAttribute="leading" id="Kii-ig-8MP"/>
+                                    <constraint firstItem="YcO-BX-5V4" firstAttribute="trailing" secondItem="tkK-SL-Bou" secondAttribute="trailing" id="ShD-V6-NFc"/>
+                                    <constraint firstItem="YcO-BX-5V4" firstAttribute="leading" secondItem="Rmf-JF-BZe" secondAttribute="leading" id="Thb-PN-ch1"/>
+                                    <constraint firstItem="daG-Bd-sbp" firstAttribute="leading" secondItem="eFJ-Wn-MEf" secondAttribute="leading" id="Xoj-So-X2K"/>
+                                    <constraint firstItem="daG-Bd-sbp" firstAttribute="trailing" secondItem="eFJ-Wn-MEf" secondAttribute="trailing" id="vgo-uE-xWO"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XOZ-H9-X5G"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <constraints>
+                            <constraint firstItem="ARe-oy-1da" firstAttribute="leading" secondItem="XOZ-H9-X5G" secondAttribute="leading" constant="30" id="3FN-Ix-3Jv"/>
+                            <constraint firstItem="XOZ-H9-X5G" firstAttribute="bottom" secondItem="HKW-3P-kxg" secondAttribute="bottom" constant="20" id="5Xx-nL-ehs"/>
+                            <constraint firstItem="XOZ-H9-X5G" firstAttribute="trailing" secondItem="ARe-oy-1da" secondAttribute="trailing" constant="30" id="Jos-au-Unq"/>
+                            <constraint firstItem="HKW-3P-kxg" firstAttribute="top" secondItem="ARe-oy-1da" secondAttribute="top" constant="200" id="X5N-ah-AeL"/>
+                            <constraint firstItem="HKW-3P-kxg" firstAttribute="leading" secondItem="ARe-oy-1da" secondAttribute="leading" id="cf5-TF-RiE"/>
+                            <constraint firstItem="ARe-oy-1da" firstAttribute="top" secondItem="XOZ-H9-X5G" secondAttribute="top" constant="30" id="jXA-Gf-5C7"/>
+                            <constraint firstItem="HKW-3P-kxg" firstAttribute="trailing" secondItem="ARe-oy-1da" secondAttribute="trailing" id="xF0-hx-uG1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="ARe-oy-1da" id="cRG-rk-plC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cDT-u3-7qh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3787" y="-5324"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
