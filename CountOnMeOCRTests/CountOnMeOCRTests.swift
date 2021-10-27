@@ -48,10 +48,10 @@ class CalculatorTestCase: XCTestCase {
         
         calculator.delegate = delegate
         
-        calculator.numberButton(number: "10")
-        calculator.operandButton(operand: "/")
-        calculator.numberButton(number: "0")
-        calculator.equalButton()
+        calculator.insertNumber(number: "10")
+        calculator.insertOperand(operand: "/")
+        calculator.insertNumber(number: "0")
+        calculator.insertEqual()
         
         waitForExpectations(timeout: 1)
         
@@ -72,10 +72,10 @@ class CalculatorTestCase: XCTestCase {
         
         calculator.delegate = delegate
         
-        calculator.numberButton(number: "2")
-        calculator.operandButton(operand: "+")
-        calculator.numberButton(number: "5")
-        calculator.equalButton()
+        calculator.insertNumber(number: "2")
+        calculator.insertOperand(operand: "+")
+        calculator.insertNumber(number: "5")
+        calculator.insertEqual()
         
         waitForExpectations(timeout: 1)
         
@@ -89,7 +89,7 @@ class CalculatorTestCase: XCTestCase {
     // MARK: - Testing reset()
     
     func testGivenAnExpression_WhenTriggeringFunctionReset_ThenElementsIsEmpty() {
-        calculator.numberButton(number: "5")
+        calculator.insertNumber(number: "5")
         calculator.reset()
         XCTAssertTrue(calculator.elements.isEmpty)
     }
@@ -102,12 +102,12 @@ class CalculatorTestCase: XCTestCase {
         
         calculator.delegate = delegate
         
-        calculator.numberButton(number: "5")
-        calculator.operandButton(operand: "+")
-        calculator.numberButton(number: "2")
-        calculator.operandButton(operand: "*")
-        calculator.numberButton(number: "2")
-        calculator.equalButton()
+        calculator.insertNumber(number: "5")
+        calculator.insertOperand(operand: "+")
+        calculator.insertNumber(number: "2")
+        calculator.insertOperand(operand: "*")
+        calculator.insertNumber(number: "2")
+        calculator.insertEqual()
         
         waitForExpectations(timeout: 1)
         
@@ -124,10 +124,10 @@ class CalculatorTestCase: XCTestCase {
         
         calculator.delegate = delegate
         
-        calculator.numberButton(number: "3")
-        calculator.operandButton(operand: "/")
-        calculator.numberButton(number: "2")
-        calculator.equalButton()
+        calculator.insertNumber(number: "3")
+        calculator.insertOperand(operand: "/")
+        calculator.insertNumber(number: "2")
+        calculator.insertEqual()
         
         waitForExpectations(timeout: 1)
         
@@ -145,7 +145,7 @@ class CalculatorTestCase: XCTestCase {
         
         calculator.delegate = delegate
         
-        calculator.numberButton(number: "5")
+        calculator.insertNumber(number: "5")
         
         waitForExpectations(timeout: 1)
         
@@ -161,11 +161,11 @@ class CalculatorTestCase: XCTestCase {
         
         calculator.delegate = delegate
         
-        calculator.numberButton(number: "2")
-        calculator.operandButton(operand: "+")
-        calculator.numberButton(number: "3")
-        calculator.equalButton()
-        calculator.numberButton(number: "3")
+        calculator.insertNumber(number: "2")
+        calculator.insertOperand(operand: "+")
+        calculator.insertNumber(number: "3")
+        calculator.insertEqual()
+        calculator.insertNumber(number: "3")
         
         waitForExpectations(timeout: 1)
         
@@ -181,8 +181,8 @@ class CalculatorTestCase: XCTestCase {
         
         calculator.delegate = delegate
         
-        calculator.numberButton(number: "-")
-        calculator.equalButton()
+        calculator.insertNumber(number: "-")
+        calculator.insertEqual()
         
         waitForExpectations(timeout: 1)
         
@@ -197,9 +197,9 @@ class CalculatorTestCase: XCTestCase {
     
     calculator.delegate = delegate
     
-    calculator.numberButton(number: "2")
-    calculator.operandButton(operand: "-")
-    calculator.equalButton()
+    calculator.insertNumber(number: "2")
+    calculator.insertOperand(operand: "-")
+    calculator.insertEqual()
     
     waitForExpectations(timeout: 1)
     
@@ -214,12 +214,12 @@ class CalculatorTestCase: XCTestCase {
         
         calculator.delegate = delegate
         
-        calculator.numberButton(number: "10")
-        calculator.operandButton(operand: "-")
-        calculator.numberButton(number: "8")
-        calculator.equalButton()
-        calculator.operandButton(operand: "+")
-        calculator.numberButton(number: "2")
+        calculator.insertNumber(number: "10")
+        calculator.insertOperand(operand: "-")
+        calculator.insertNumber(number: "8")
+        calculator.insertEqual()
+        calculator.insertOperand(operand: "+")
+        calculator.insertNumber(number: "2")
         
         waitForExpectations(timeout: 1)
         
@@ -234,11 +234,11 @@ class CalculatorTestCase: XCTestCase {
         
         calculator.delegate = delegate
         
-        calculator.numberButton(number: "2")
-        calculator.operandButton(operand: "*")
-        calculator.numberButton(number: "2")
-        calculator.equalButton()
-        calculator.numberButton(number: "2")
+        calculator.insertNumber(number: "2")
+        calculator.insertOperand(operand: "*")
+        calculator.insertNumber(number: "2")
+        calculator.insertEqual()
+        calculator.insertNumber(number: "2")
         
         waitForExpectations(timeout: 1)
         

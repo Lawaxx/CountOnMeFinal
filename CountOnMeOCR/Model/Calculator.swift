@@ -68,7 +68,7 @@ final class Calculator {
         delegate?.updateDisplay(text: "0")
     }
     // This func will solve priority operations ("x" and "/") in the expression
-   private func organizeProperties() -> [String] {
+   private func organizePriorities() -> [String] {
         var operationsToReduce = elements
         while operationsToReduce.contains("*") || operationsToReduce.contains("/") {
             if let index = operationsToReduce.firstIndex(where: { $0 == "*" || $0 == "/" })  {
@@ -96,7 +96,7 @@ final class Calculator {
     //This is the main algorithm which will produce the result from the expression:
   private func performCalcul() {
         
-        var expression = organizeProperties()
+        var expression = organizePriorities()
         // Iterate over operations while an operand still here:
         while expression.count > 1 {
             guard let left = Double(expression[0]) else {
@@ -128,7 +128,7 @@ final class Calculator {
    private func notifyDisplay() {
         delegate?.updateDisplay(text: display)
     }
-    //  This func will join numbers in the expression and will be used in next func: numberButton()
+    //  This func will join numbers in the expression and will be used in next func: insertNumber()
   private func joiningNumbers(next: String) {
         guard let lastElement = elements.last else {
             return
@@ -137,7 +137,7 @@ final class Calculator {
         elements.removeLast()
         elements.append(newElement)
     }
-    func numberButton(number: String) {
+    func insertNumber(number: String) {
         if expressionHasResult  { // If there is already a result, tapping a number will start a new expression:
             elements.removeAll()
             elements.append(number)
@@ -148,7 +148,7 @@ final class Calculator {
         }
         notifyDisplay()
     }
-    func operandButton(operand: String) {
+    func insertOperand(operand: String) {
         if expressionHasResult { // if there is already a result, we will start a new expression with it:
             if let result = elements.last {
                 elements.removeAll()
@@ -173,7 +173,7 @@ final class Calculator {
         return formatedResult
     }
         
-    func equalButton() {
+    func insertEqual() {
         // First check if the expression is correct and can produce a result otherwise, send an Alert
         guard expressionIsCorrect else {
             delegate?.presentAlert(text: "Expression incorrect")

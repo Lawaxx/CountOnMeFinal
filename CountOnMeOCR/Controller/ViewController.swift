@@ -30,16 +30,16 @@ class ViewController: UIViewController {
         guard let numberButton = sender.title(for: .normal) else {
             return
         }
-        calculator.numberButton(number: numberButton)
+        calculator.insertNumber(number: numberButton)
     }
     @IBAction func tappedOperandButton(_ sender: UIButton) {
         guard let operandButton = sender.title(for: .normal) else {
             return
         }
-        calculator.operandButton(operand: operandButton)
+        calculator.insertOperand(operand: operandButton)
     }
     @IBAction func tappedEqualButton(_ sender: UIButton) {
-        calculator.equalButton()
+        calculator.insertEqual()
     }
 }
 // MARK: - Extension
