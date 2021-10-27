@@ -68,7 +68,7 @@ final class Calculator {
         delegate?.updateDisplay(text: "0")
     }
     // This func will solve priority operations ("x" and "/") in the expression
-   private func organizePriorities() -> [String] {
+    private func organizePriorities() -> [String] {
         var operationsToReduce = elements
         while operationsToReduce.contains("*") || operationsToReduce.contains("/") {
             if let index = operationsToReduce.firstIndex(where: { $0 == "*" || $0 == "/" })  {
@@ -94,7 +94,7 @@ final class Calculator {
     }
     
     //This is the main algorithm which will produce the result from the expression:
-  private func performCalcul() {
+    private func performCalcul() {
         
         var expression = organizePriorities()
         // Iterate over operations while an operand still here:
@@ -125,11 +125,11 @@ final class Calculator {
         elements.append("\(finalResult)")
     }
     //This func will call the delegate method to update display in the View Controller:
-   private func notifyDisplay() {
+    private func notifyDisplay() {
         delegate?.updateDisplay(text: display)
     }
     //  This func will join numbers in the expression and will be used in next func: insertNumber()
-  private func joiningNumbers(next: String) {
+    private func joiningNumbers(next: String) {
         guard let lastElement = elements.last else {
             return
         }
@@ -172,7 +172,6 @@ final class Calculator {
         }
         return formatedResult
     }
-        
     func insertEqual() {
         // First check if the expression is correct and can produce a result otherwise, send an Alert
         guard expressionIsCorrect else {
