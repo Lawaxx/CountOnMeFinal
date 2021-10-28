@@ -29,11 +29,11 @@ final class Calculator {
     
     // This variable checks all possible errors in the expression preventing from producing a result
     private var expressionIsCorrect: Bool {
-        return elements.count >= 3 && expressionHasOperand && !lastElementIsOperand
-            && !expressionIsIncorrect
+        return elements.count >= 3 && expressionHasOperand
+            && !expressionIsIncorrect && lastElementIsNumber
     }
     private var expressionIsIncorrect: Bool {
-        return display.contains("/0")
+        return display.contains("/0") || lastElementIsOperand
         delegate?.presentAlert(text: "Expression Incorrect")
     }
     private var lastElementIsOperand: Bool {
@@ -48,7 +48,6 @@ final class Calculator {
         }
         return lastElement.isNumber == true
     }
-    
     private var expressionHasOperand: Bool {
         return elements.contains("+") || elements.contains("-") || elements.contains("*")
             || elements.contains("/")
@@ -179,7 +178,7 @@ final class Calculator {
             return
         }
         // Then check if there is already a result before performing calcul, otherwise pressing equal does nothing
-        if !expressionHasResult  {
+        if !expressionHasResult {
             performCalcul()
             notifyDisplay()
             return

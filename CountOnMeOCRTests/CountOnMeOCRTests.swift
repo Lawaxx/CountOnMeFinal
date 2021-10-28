@@ -193,20 +193,20 @@ class CalculatorTestCase: XCTestCase {
     }
     //MARK: Testing Expression Incorrect
     func testGivenExpression_WhenLastElementIsOperand_ThenExpressionIsIncorrect(){
-    let delegate = Delegate(testCase: self)
-    
-    calculator.delegate = delegate
-    
-    calculator.insertNumber(number: "2")
-    calculator.insertOperand(operand: "-")
-    calculator.insertEqual()
-    
-    waitForExpectations(timeout: 1)
-    
-    
-    let result = delegate.result
-    
-    XCTAssertEqual(result, "Expression incorrect")
+        let delegate = Delegate(testCase: self)
+        
+        calculator.delegate = delegate
+        
+        calculator.insertNumber(number: "2")
+        calculator.insertOperand(operand: "-")
+        calculator.insertEqual()
+        
+        waitForExpectations(timeout: 1)
+        
+        
+        let result = delegate.result
+        
+        XCTAssertEqual(result, "Expression incorrect")
     }
     //MARK: Testing result with result
     func testGivenExpressionWithResult_WhenAddAnOperand_ThenExpressionBeganByResult(){
@@ -246,5 +246,22 @@ class CalculatorTestCase: XCTestCase {
         let result = delegate.result
         
         XCTAssertEqual(result, "2")
+    }
+    func testGivenNumberInExpression_WhenAddNumber_ThenJoigningNumbers(){
+        let delegate = Delegate(testCase: self)
+        
+        calculator.delegate = delegate
+        
+        calculator.insertNumber(number: "2")
+        calculator.insertNumber(number: "2")
+        
+        
+        waitForExpectations(timeout: 1)
+        
+        
+        let result = delegate.result
+        
+        XCTAssertEqual(result, "22")
+        
     }
 }
