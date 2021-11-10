@@ -34,7 +34,6 @@ final class Calculator {
     }
     private var expressionIsIncorrect: Bool {
         return display.contains("/0") || lastElementIsOperand
-        delegate?.presentAlert(text: "Expression Incorrect")
     }
     private var lastElementIsOperand: Bool {
         guard let lastElement = elements.last else {

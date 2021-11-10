@@ -13,22 +13,14 @@ class Delegate: DisplayDelegate {
     
     var result: String?
     
-    private var expectation: XCTestExpectation?
-    private let testCase: XCTestCase
+
+    init(testCase: XCTestCase) {}
     
-    init(testCase: XCTestCase) {
-        self.testCase = testCase
-        expectation = testCase.expectation(description: "Expect Result")
-    }
     func updateDisplay(text: String) {
         result = text
-        expectation?.fulfill()
-        expectation = nil
     }
     func presentAlert(text: String) {
         result = text
-        expectation?.fulfill()
-        expectation = nil
     }
 }
 
@@ -44,7 +36,6 @@ class CalculatorTestCase: XCTestCase {
     func testGivenDivideByZeroInExpression_WhenTapEqualButton_ThenDisplayShowExpressionError() {
         
         let delegate = Delegate(testCase: self)
-        let calculator = Calculator()
         
         calculator.delegate = delegate
         
@@ -52,9 +43,6 @@ class CalculatorTestCase: XCTestCase {
         calculator.insertOperand(operand: "/")
         calculator.insertNumber(number: "0")
         calculator.insertEqual()
-        
-        waitForExpectations(timeout: 1)
-        
         
         let result = delegate.result
         
@@ -76,9 +64,6 @@ class CalculatorTestCase: XCTestCase {
         calculator.insertOperand(operand: "+")
         calculator.insertNumber(number: "5")
         calculator.insertEqual()
-        
-        waitForExpectations(timeout: 1)
-        
         
         let result = delegate.result
         
@@ -109,12 +94,25 @@ class CalculatorTestCase: XCTestCase {
         calculator.insertNumber(number: "2")
         calculator.insertEqual()
         
-        waitForExpectations(timeout: 1)
-        
-        
         let result = delegate.result
         
         XCTAssertEqual(result, "5+2*2=9")
+    }
+    func testGivenExpressionWithResult_WhenAddNumbers_ThenExpressionAddNewNumbers(){
+        let delegate = Delegate(testCase: self)
+        
+        calculator.delegate = delegate
+        
+        calculator.insertNumber(number: "2")
+        calculator.insertOperand(operand: "*")
+        calculator.insertNumber(number: "3")
+        calculator.insertOperand(operand: "/")
+        calculator.insertNumber(number: "4")
+        calculator.insertEqual()
+       
+        let result = delegate.result
+        
+        XCTAssertEqual(result, "2*3/4=1.5")
     }
     
     // MARK: Testing decimal result
@@ -128,10 +126,7 @@ class CalculatorTestCase: XCTestCase {
         calculator.insertOperand(operand: "/")
         calculator.insertNumber(number: "2")
         calculator.insertEqual()
-        
-        waitForExpectations(timeout: 1)
-        
-        
+
         let result = delegate.result
         
         XCTAssertEqual(result, "3/2=1.5")
@@ -146,9 +141,6 @@ class CalculatorTestCase: XCTestCase {
         calculator.delegate = delegate
         
         calculator.insertNumber(number: "5")
-        
-        waitForExpectations(timeout: 1)
-        
         
         let result = delegate.result
         
@@ -167,9 +159,6 @@ class CalculatorTestCase: XCTestCase {
         calculator.insertEqual()
         calculator.insertNumber(number: "3")
         
-        waitForExpectations(timeout: 1)
-        
-        
         let result = delegate.result
         
         XCTAssertEqual(result, "3")
@@ -181,12 +170,9 @@ class CalculatorTestCase: XCTestCase {
         
         calculator.delegate = delegate
         
-        calculator.insertNumber(number: "-")
+        calculator.insertOperand(operand: "-")
         calculator.insertEqual()
-        
-        waitForExpectations(timeout: 1)
-        
-        
+
         let result = delegate.result
         
         XCTAssertEqual(result, "Expression incorrect")
@@ -200,10 +186,7 @@ class CalculatorTestCase: XCTestCase {
         calculator.insertNumber(number: "2")
         calculator.insertOperand(operand: "-")
         calculator.insertEqual()
-        
-        waitForExpectations(timeout: 1)
-        
-        
+
         let result = delegate.result
         
         XCTAssertEqual(result, "Expression incorrect")
@@ -220,33 +203,12 @@ class CalculatorTestCase: XCTestCase {
         calculator.insertEqual()
         calculator.insertOperand(operand: "+")
         calculator.insertNumber(number: "2")
-        
-        waitForExpectations(timeout: 1)
-        
-        
+
         let result = delegate.result
         
         XCTAssertEqual(result, "2+2")
     }
-    //MARK: Testing Join Numbers
-    func testGivenExpressionWithResult_WhenAddNumbers_ThenExpressionJoinNumbers(){
-        let delegate = Delegate(testCase: self)
-        
-        calculator.delegate = delegate
-        
-        calculator.insertNumber(number: "2")
-        calculator.insertOperand(operand: "*")
-        calculator.insertNumber(number: "2")
-        calculator.insertEqual()
-        calculator.insertNumber(number: "2")
-        
-        waitForExpectations(timeout: 1)
-        
-        
-        let result = delegate.result
-        
-        XCTAssertEqual(result, "2")
-    }
+    //MARK: Testing join numbers
     func testGivenNumberInExpression_WhenAddNumber_ThenJoigningNumbers(){
         let delegate = Delegate(testCase: self)
         
@@ -254,10 +216,6 @@ class CalculatorTestCase: XCTestCase {
         
         calculator.insertNumber(number: "2")
         calculator.insertNumber(number: "2")
-        
-        
-        waitForExpectations(timeout: 1)
-        
         
         let result = delegate.result
         
